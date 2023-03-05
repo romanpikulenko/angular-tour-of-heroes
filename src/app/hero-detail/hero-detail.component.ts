@@ -13,6 +13,7 @@ import { HeroService } from '../hero.service';
 export class HeroDetailComponent {
   hero?: Hero;
   constructor(private route: ActivatedRoute, private location: Location, private heroService: HeroService) { }
+
   ngOnInit(): void {
     this.getHero();
   }
@@ -21,6 +22,13 @@ export class HeroDetailComponent {
     const id = Number(this.route.snapshot.paramMap.get('id'));
     this.heroService.getHero(id)
       .subscribe(hero => this.hero = hero);
+  }
+
+  save() {
+    if (this.hero) {
+      this.heroService.updateHero(this.hero)
+        .subscribe(() => this.goBack());
+    }
   }
 
   goBack(): void {

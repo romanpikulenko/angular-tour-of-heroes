@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+	],
+	"settings": {
+		"editor.formatOnSave": true,
+		"explorer.copyRelativePathSeparator": "/",
+		"editor.codeActionsOnSave": {
+			"source.organizeImports": true
+		},
+	}
+}
